@@ -45,7 +45,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Username?"/>
                                                 <connections>
-                                                    <segue destination="8Oe-3i-mIC" kind="show" id="X2E-Qs-rfR"/>
+                                                    <segue destination="8Oe-3i-mIC" kind="show" identifier="Username" id="X2E-Qs-rfR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdM-wq-Vxu">
@@ -53,7 +53,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
                                                 <connections>
-                                                    <segue destination="8Oe-3i-mIC" kind="show" id="IEn-yI-4OT"/>
+                                                    <segue destination="8Oe-3i-mIC" kind="show" identifier="Password" id="IEn-yI-4OT"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -74,6 +74,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="NlT-zk-QKn"/>
                     <connections>
+                        <outlet property="forgotPasswordButton" destination="WdM-wq-Vxu" id="VzP-th-EY0"/>
+                        <outlet property="forgotUsernameButton" destination="Ygy-UF-4E2" id="ZiY-fT-2r6"/>
                         <outlet property="passwordTextField" destination="atN-EO-Ugj" id="L6D-fG-LV6"/>
                         <outlet property="usernameTextField" destination="ZYv-Tc-RKB" id="5yF-GJ-g14"/>
                         <segue destination="8Oe-3i-mIC" kind="show" identifier="Login" id="00A-5C-RRW"/>
@@ -119,7 +121,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="00A-5C-RRW"/>
+        <segue reference="IEn-yI-4OT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemRedColor">

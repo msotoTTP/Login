@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var forgotUsernameButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -22,6 +24,29 @@ class ViewController: UIViewController {
             if !username.isEmpty && !password.isEmpty {
                 performSegue(withIdentifier: "Login", sender: sender)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //textbook solution
+//        if let senderButton = sender as? UIButton {
+//            if senderButton == forgotUsernameButton {
+//                segue.destination.navigationItem.title = "Forgot Username"
+//            } else if senderButton == forgotPasswordButton {
+//                segue.destination.navigationItem.title = "Forgot Password"
+//            } else {
+//                segue.destination.navigationItem.title = usernameTextField.text
+//            }
+//        }
+        
+        //alternate solution
+        switch segue.identifier {
+        case "Username":
+            segue.destination.navigationItem.title = "Forgot Username"
+        case "Password":
+            segue.destination.navigationItem.title = "Forgot Password"
+        default:
+            segue.destination.navigationItem.title = usernameTextField.text
         }
     }
     
